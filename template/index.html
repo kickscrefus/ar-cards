@@ -3,9 +3,62 @@
 <head>
 <meta charset="utf-8">
 <title>AR名刺</title>
+
+<script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aframe-ar-hit-test-component/dist/aframe-ar-hit-test-component.min.js"></script>
 </head>
-<body>
-<h1>AR名刺テンプレ</h1>
-<p>ここが表示されたら成功！</p>
+
+<body style="margin:0; overflow:hidden;">
+<a-scene
+vr-mode-ui="enabled: false"
+renderer="logarithmicDepthBuffer: true;"
+embedded
+ar-hit-test="target: #card"
+>
+
+<a-assets>
+<img id="icon" src="icon.png">
+<img id="photo" src="photo.png">
+</a-assets>
+
+<!-- 平面に出るカード -->
+<a-entity id="card" visible="false">
+
+<!-- 背景 -->
+<a-plane
+width="1.2"
+height="0.8"
+color="#FFFFFF">
+</a-plane>
+
+<!-- 名前 -->
+<a-text
+value="なまえ"
+position="0 0.25 0.01"
+align="center"
+width="2"
+color="#000000">
+</a-text>
+
+<!-- アイコン -->
+<a-image
+src="#icon"
+width="0.3"
+height="0.3"
+position="0 -0.05 0.01">
+</a-image>
+
+<!-- メッセージ -->
+<a-text
+value="ここにメッセージ"
+position="0 -0.35 0.01"
+align="center"
+width="2"
+color="#333333">
+</a-text>
+
+</a-entity>
+
+</a-scene>
 </body>
 </html>
