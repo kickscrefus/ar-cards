@@ -17,23 +17,31 @@
 
 <!-- 画像を事前読み込み -->
 <a-assets>
-<img id="photo" src="photo.png">
+  <img id="card" src="card.png">   <!-- 名刺 -->
+  <img id="icon" src="icon.png">    <!-- 飛び出す画像（追加） -->
 </a-assets>
 
 <!-- マーカー -->
 <a-marker preset="hiro">
 
-<!-- 画像（ふわっと動く） -->
-<a-image
-src="#photo"
-width="1"
-height="0.6"
-position="0 0.3 0.05"
-rotation="180 0 0"
-animation="property: position; dir: alternate; dur: 4000; loop: true; to: 0 0.35 0.05">
-</a-image>
+  <!-- 名刺（土台） -->
+  <a-plane
+    src="#card"
+    width="1.5"
+    height="1"
+    rotation="-90 0 0"
+    position="0 0 0"
+    >
+  </a-plane>
 
-
+  <!-- 飛び出す画像 -->
+  <a-image
+    src="#icon"
+    width="0.7"
+    height="0.7"
+    position="0 0.7 0"
+    animation="property: position; dir: alternate; dur: 2000; loop: true; to: 0 1 0">
+  </a-image>
 
 </a-marker>
 
@@ -42,5 +50,4 @@ animation="property: position; dir: alternate; dur: 4000; loop: true; to: 0 0.35
 
 </a-scene>
 
-</body>
-</html>
+
